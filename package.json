@@ -1,0 +1,32 @@
+{
+  "name": "@nanidao/gcp-account",
+  "version": "0.0.3",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.3.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "viem": "^2.21.32"
+  },
+  "dependencies": {
+    "@google-cloud/kms": "^4.5.0",
+    "asn1js": "^3.0.5",
+    "viem": "^2.21.32"
+  }
+}
